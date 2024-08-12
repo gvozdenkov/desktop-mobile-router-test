@@ -29,6 +29,9 @@ import {
   VolunteerApplicationsPage,
   ConfirmUnprocessedPage,
   ConfirmAdminsPage,
+  BlogPage,
+  PolicyPage,
+  ContactsPage,
 } from '../pages';
 
 export const router = createBrowserRouter([
@@ -202,6 +205,32 @@ export const router = createBrowserRouter([
                 ],
               },
             ],
+          },
+        ],
+      },
+      {
+        path: 'blog',
+        element: <BlogPage />,
+      },
+      {
+        path: 'policy',
+        element: <PolicyPage />,
+      },
+      {
+        path: 'contacts',
+        element: (
+          <ProfileLayoutPrivate
+            sideElements={
+              <div>
+                <UserInfo />
+              </div>
+            }
+          />
+        ),
+        children: [
+          {
+            index: true,
+            element: <ContactsPage />,
           },
         ],
       },

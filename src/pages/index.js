@@ -10,3 +10,4 @@ export { UserStatisticsPage } from './profile/admin/user-statistics.page';
 export { ApplicationStatisticsPage } from './profile/admin/application-statistics.page';
 export { ConfirmUnprocessedPage } from './profile/admin/confirm-unprocessed.page';
 export { ConfirmAdminsPage } from './profile/admin/confirm-admins.page';
+export * from './public';
