@@ -9,7 +9,16 @@ export const Header = () => {
 
   return (
     <>
-      <ul style={{ borderBottom: '1px solid gray', margin: 0, display: 'flex', gap: '20px' }}>
+      <ul
+        style={{
+          borderBottom: '1px solid gray',
+          margin: 0,
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          gap: '20px',
+        }}
+      >
         {userMenu.map((menu) => (
           <li key={menu.link}>
             <NavLink to={menu.link}>{menu.text}</NavLink>
