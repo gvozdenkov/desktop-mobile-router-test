@@ -1,1 +1,1 @@
-export { filterRootAdminConfig } from './check-root-admin';
+export { filterRootAdminConfig, filterAdminConfig } from './check-root-admin';

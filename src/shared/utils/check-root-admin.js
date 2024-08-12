@@ -5,3 +5,10 @@ export var filterRootAdminConfig = (configArray, isRoot) => {
 
   return isRoot ? [...adminConfig, ...rootOnlyConfig] : adminConfig;
 };
+
+export var filterAdminConfig = (configArray, isAdmin) => {
+  var commonConfig = configArray.filter((item) => item.adminOnly !== true);
+  var adminConfig = configArray.filter((item) => item.adminOnly === true);
+
+  return isAdmin ? [...commonConfig, ...adminConfig] : commonConfig;
+};
