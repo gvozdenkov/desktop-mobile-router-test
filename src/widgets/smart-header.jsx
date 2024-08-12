@@ -1,10 +1,19 @@
 /* eslint-disable react/prop-types */
-export const SmartHeader = ({ title }) => {
+export const SmartHeader = ({ title, withFilter }) => {
   return (
     <>
-      <p className="preview-border" style={{ padding: '16px' }}>
-        {title}
-      </p>
+      <div
+        className="preview-border"
+        style={{
+          display: 'flex',
+          flexFlow: 'row',
+          justifyContent: 'space-between',
+          padding: '16px',
+        }}
+      >
+        <p>{title}</p>
+        {withFilter && <p>Фильтр</p>}
+      </div>
     </>
   );
 };

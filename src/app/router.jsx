@@ -123,7 +123,7 @@ export const router = createBrowserRouter([
             path: 'statistics',
             element: (
               <ProfileDetailsLayout
-                header={<SmartHeader title="Статистика" />}
+                header={<SmartHeader title="Статистика" withFilter />}
                 menu={adminProfileStatisticsMenu}
               />
             ),
@@ -146,7 +146,7 @@ export const router = createBrowserRouter([
             path: 'applications',
             element: (
               <ProfileDetailsLayout
-                header={<SmartHeader title="Создание / Редактирование заявки" />}
+                header={<SmartHeader title="Создание / Редактирование заявки" withFilter />}
                 menu={adminProfileApplicationsMenu}
                 controls={
                   <label>
@@ -175,7 +175,7 @@ export const router = createBrowserRouter([
             path: 'applications/volunteers',
             element: (
               <ProfileDetailsLayout
-                header={<SmartHeader title="Создание / Редактирование заявки" />}
+                header={<SmartHeader title="Создание / Редактирование заявки" withFilter />}
               />
             ),
             children: [
@@ -195,7 +195,7 @@ export const router = createBrowserRouter([
             path: 'applications/recipients',
             element: (
               <ProfileDetailsLayout
-                header={<SmartHeader title="Создание / Редактирование заявки" />}
+                header={<SmartHeader title="Создание / Редактирование заявки" withFilter />}
               />
             ),
             children: [
