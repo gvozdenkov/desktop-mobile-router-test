@@ -33,6 +33,7 @@ import {
   PolicyPage,
   ContactsPage,
 } from '../pages';
+import { volunteerProfileButtons } from '#constants/volunteer-profile-buttons.js';
 
 export const router = createBrowserRouter([
   {
@@ -64,6 +65,7 @@ export const router = createBrowserRouter([
         path: 'profile/admin',
         element: (
           <ProfileLayoutPrivate
+            allowed={['admin']}
             sideElements={
               <div>
                 <UserInfo />
@@ -209,6 +211,20 @@ export const router = createBrowserRouter([
         ],
       },
       {
+        path: 'profile/volunteer',
+        element: (
+          <ProfileLayoutPrivate
+            allowed={['volunteer']}
+            sideElements={
+              <div>
+                <UserInfo />
+                <ProfileButtons buttons={volunteerProfileButtons} disabled={false} />
+              </div>
+            }
+          />
+        ),
+      },
+      {
         path: 'blog',
         element: <BlogPage />,
       },
@@ -220,6 +236,7 @@ export const router = createBrowserRouter([
         path: 'contacts',
         element: (
           <ProfileLayoutPrivate
+            allowed={['admin', 'recipient', 'volunteer']}
             sideElements={
               <div>
                 <UserInfo />

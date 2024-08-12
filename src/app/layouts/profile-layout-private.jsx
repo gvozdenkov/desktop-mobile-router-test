@@ -4,10 +4,10 @@ import { Navigate, Outlet } from 'react-router-dom';
 import s from './profile-layout.module.css';
 import { userRole } from '../../mocks';
 
-export const ProfileLayoutPrivate = ({ sideElements }) => {
+export const ProfileLayoutPrivate = ({ sideElements, allowed }) => {
   const role = userRole;
 
-  return role ? (
+  return role && allowed.includes(role) ? (
     <div className={s.profileLayout}>
       {sideElements}
       <div>

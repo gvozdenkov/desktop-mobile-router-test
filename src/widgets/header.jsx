@@ -7,7 +7,6 @@ import { filterAdminConfig } from '#shared/utils/check-root-admin.js';
 export const Header = () => {
   const userMenu = filterAdminConfig(mainMenu, isAdmin);
 
-  console.log(userMenu);
   return (
     <>
       <ul style={{ borderBottom: '1px solid gray', margin: 0, display: 'flex', gap: '20px' }}>

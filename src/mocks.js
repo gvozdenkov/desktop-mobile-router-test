@@ -25,9 +25,10 @@ export const roles = {
   },
 };
 
-export var userRole = roles.admin.role;
-export const isRoot = roles.admin.isRoot;
 // export var userRole;
+export var userRole = userRoles.volonteer;
+export var isRoot;
+export var isAdmin = userRole === userRoles.admin;
 
 export const mockVolunteers = [
   {
