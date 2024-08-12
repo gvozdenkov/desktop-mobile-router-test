@@ -12,3 +12,4 @@ export { ConfirmUnprocessedPage } from './profile/admin/confirm-unprocessed.page
 export { ConfirmAdminsPage } from './profile/admin/confirm-admins.page';
 export * from './public';
 export * from './profile/volunteer';
+export * from './profile/recipient';

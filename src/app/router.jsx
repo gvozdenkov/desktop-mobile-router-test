@@ -35,8 +35,11 @@ import {
   VolunteerMapPage,
   VolunteerActiveApplicationPage,
   VolunteerComplitedApplicationPage,
+  RecipientActiveApplicationPage,
+  RecipientComplitedApplicationPage,
 } from '../pages';
 import { volunteerProfileButtons } from '#constants/volunteer-profile-buttons.js';
+import { recipientProfileButtons } from '#constants/recipient-profile-buttons.js';
 
 export const router = createBrowserRouter([
   {
@@ -204,7 +207,7 @@ export const router = createBrowserRouter([
                 element: <RecipientApplicationHistoryPage />,
                 children: [
                   {
-                    path: 'new-application-yo',
+                    path: 'new-application',
                     element: <NewApplicationPage />,
                   },
                 ],
@@ -264,6 +267,56 @@ export const router = createBrowserRouter([
               {
                 index: true,
                 element: <VolunteerComplitedApplicationPage />,
+              },
+            ],
+          },
+        ],
+      },
+      {
+        path: 'profile/recipient',
+        element: (
+          <ProfileLayoutPrivate
+            allowed={['recipient']}
+            sideElements={
+              <div>
+                <UserInfo />
+                <ProfileButtons buttons={recipientProfileButtons} disabled={false} />
+              </div>
+            }
+          />
+        ),
+        children: [
+          {
+            index: true,
+            loader: () => redirect('active'),
+          },
+          {
+            path: 'active',
+            element: (
+              <ProfileDetailsLayout header={<SmartHeader title="Активные заявки" withFilter />} />
+            ),
+            children: [
+              {
+                index: true,
+                element: <RecipientActiveApplicationPage />,
+              },
+              {
+                path: 'new-application',
+                element: <NewApplicationPage />,
+              },
+            ],
+          },
+          {
+            path: 'complited',
+            element: (
+              <ProfileDetailsLayout
+                header={<SmartHeader title="Завершенные заявки" withFilter />}
+              />
+            ),
+            children: [
+              {
+                index: true,
+                element: <RecipientComplitedApplicationPage />,
               },
             ],
           },
