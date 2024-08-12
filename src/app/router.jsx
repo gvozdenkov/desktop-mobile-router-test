@@ -32,6 +32,9 @@ import {
   BlogPage,
   PolicyPage,
   ContactsPage,
+  VolunteerMapPage,
+  VolunteerActiveApplicationPage,
+  VolunteerComplitedApplicationPage,
 } from '../pages';
 import { volunteerProfileButtons } from '#constants/volunteer-profile-buttons.js';
 
@@ -223,6 +226,48 @@ export const router = createBrowserRouter([
             }
           />
         ),
+        children: [
+          {
+            index: true,
+            loader: () => redirect('map'),
+          },
+          {
+            path: 'map',
+            element: <ProfileDetailsLayout header={<SmartHeader title="Карта заявок" />} />,
+            children: [
+              {
+                index: true,
+                element: <VolunteerMapPage />,
+              },
+            ],
+          },
+          {
+            path: 'active',
+            element: (
+              <ProfileDetailsLayout header={<SmartHeader title="Активные заявки" withFilter />} />
+            ),
+            children: [
+              {
+                index: true,
+                element: <VolunteerActiveApplicationPage />,
+              },
+            ],
+          },
+          {
+            path: 'complited',
+            element: (
+              <ProfileDetailsLayout
+                header={<SmartHeader title="Завершенные заявки" withFilter />}
+              />
+            ),
+            children: [
+              {
+                index: true,
+                element: <VolunteerComplitedApplicationPage />,
+              },
+            ],
+          },
+        ],
       },
       {
         path: 'blog',
