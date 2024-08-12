@@ -2,7 +2,9 @@
 export const SmartHeader = ({ title }) => {
   return (
     <>
-      <p className="preview-border">{title}</p>
+      <p className="preview-border" style={{ padding: '16px' }}>
+        {title}
+      </p>
     </>
   );
 };
