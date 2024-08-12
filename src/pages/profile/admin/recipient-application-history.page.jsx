@@ -17,7 +17,7 @@ export const RecipientApplicationHistoryPage = () => {
 
       <UserCard data={user} />
 
-      <Link to={'new-application-yo'}>+ Создать заявку</Link>
+      <Link to={'new-application'}>+ Создать заявку</Link>
 
       {applications.length && <CardList Card={ApplicationCard} data={applications} />}
       <Outlet />
