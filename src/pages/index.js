@@ -11,6 +11,7 @@ export { ApplicationStatisticsPage } from './profile/admin/application-statistic
 export { ConfirmUnprocessedPage } from './profile/admin/confirm-unprocessed.page';
 export { ConfirmAdminsPage } from './profile/admin/confirm-admins.page';
 export { ScoreSetupPage } from './profile/admin/score-setup.page';
+export { NewAdminPage } from './profile/admin/new-admin.page';
 export * from './public';
 export * from './profile/volunteer';
 export * from './profile/recipient';

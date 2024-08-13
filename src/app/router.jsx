@@ -1,4 +1,4 @@
-import { createBrowserRouter, redirect } from 'react-router-dom';
+import { createBrowserRouter, Link, redirect } from 'react-router-dom';
 
 import {
   ProfileDetailsLayout,
@@ -38,10 +38,12 @@ import {
   RecipientActiveApplicationPage,
   RecipientComplitedApplicationPage,
   ScoreSetupPage,
+  NewAdminPage,
 } from '../pages';
 import { volunteerProfileButtons } from '#constants/volunteer-profile-buttons.js';
 import { recipientProfileButtons } from '#constants/recipient-profile-buttons.js';
 import { adminProfileApplicationsSideMenu } from '#constants/admin-applications-side-menu.js';
+import { adminProfileConfirmatinMenuForAdmins } from '#constants/admin-confirmation-menu-for-admins.js';
 
 export const router = createBrowserRouter([
   {
@@ -118,9 +120,41 @@ export const router = createBrowserRouter([
                 path: 'unprocessed',
                 element: <ConfirmUnprocessedPage />,
               },
+            ],
+          },
+          {
+            path: 'confirmations/admins',
+            element: (
+              <ProfileDetailsLayout
+                header={<SmartHeader title="Управление администраторами" withFilter />}
+                menu={adminProfileConfirmatinMenuForAdmins}
+                controls={
+                  <div style={{ display: 'flex', flexFlow: 'column', gap: '20px 0' }}>
+                    <Link to={'new-admin'}>+ Создать администратора</Link>
+                    <label>
+                      Find
+                      <input type="text" />
+                    </label>
+                  </div>
+                }
+              />
+            ),
+            children: [
               {
-                path: 'admins',
+                index: true,
                 element: <ConfirmAdminsPage />,
+              },
+            ],
+          },
+          {
+            path: 'confirmations/admins/new-admin',
+            element: (
+              <ProfileDetailsLayout header={<SmartHeader title="Добавление администраторов" />} />
+            ),
+            children: [
+              {
+                index: true,
+                element: <NewAdminPage />,
               },
             ],
           },
