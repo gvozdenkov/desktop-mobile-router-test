@@ -298,11 +298,18 @@ export const router = createBrowserRouter([
             children: [
               {
                 index: true,
-                element: <RecipientActiveApplicationPage />,
+                loader: () => redirect('active'),
               },
               {
-                path: 'new-application',
-                element: <NewApplicationPage />,
+                path: 'active',
+                element: <RecipientActiveApplicationPage />,
+                // Need to fix strange path /active/active
+                children: [
+                  {
+                    path: 'new-application',
+                    element: <NewApplicationPage />,
+                  },
+                ],
               },
             ],
           },
