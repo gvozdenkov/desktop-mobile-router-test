@@ -4,31 +4,18 @@ export var userRoles = {
   volonteer: 'volunteer',
 };
 
-export const roles = {
-  admin: {
-    role: 'admin',
-    isRoot: true,
-    permissions: [
-      'CONFIRM_USER',
-      'CREATE_TASK',
-      'GIVE_KEY',
-      'RESOLVE_CONFLICT',
-      'EDIT_BLOG',
-      'SET_CATEGORY_POINTS',
-    ],
-  },
-  recipient: {
-    role: 'recipient',
-  },
-  volunteer: {
-    role: 'volunteer',
-  },
-};
-
 // export var userRole;
-export var userRole = userRoles.recipient;
-export var isRoot = false;
+export var userRole = userRoles.admin;
+export var isRoot = true;
 export var isAdmin = userRole === userRoles.admin;
+export var adminPermissions = [
+  'CONFIRM_USER',
+  'CREATE_TASK',
+  'GIVE_KEY',
+  'RESOLVE_CONFLICT',
+  'EDIT_BLOG',
+  'SET_CATEGORY_POINTS',
+];
 
 export const mockVolunteers = [
   {

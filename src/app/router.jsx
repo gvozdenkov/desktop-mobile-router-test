@@ -37,9 +37,11 @@ import {
   VolunteerComplitedApplicationPage,
   RecipientActiveApplicationPage,
   RecipientComplitedApplicationPage,
+  ScoreSetupPage,
 } from '../pages';
 import { volunteerProfileButtons } from '#constants/volunteer-profile-buttons.js';
 import { recipientProfileButtons } from '#constants/recipient-profile-buttons.js';
+import { adminProfileApplicationsSideMenu } from '#constants/admin-applications-side-menu.js';
 
 export const router = createBrowserRouter([
   {
@@ -151,6 +153,7 @@ export const router = createBrowserRouter([
               <ProfileDetailsLayout
                 header={<SmartHeader title="Создание / Редактирование заявки" withFilter />}
                 menu={adminProfileApplicationsMenu}
+                sideMenu={adminProfileApplicationsSideMenu}
                 controls={
                   <label>
                     Find
@@ -211,6 +214,16 @@ export const router = createBrowserRouter([
                     element: <NewApplicationPage />,
                   },
                 ],
+              },
+            ],
+          },
+          {
+            path: 'applications/score',
+            element: <ProfileDetailsLayout header={<SmartHeader title="Настройка баллов" />} />,
+            children: [
+              {
+                index: true,
+                element: <ScoreSetupPage />,
               },
             ],
           },
