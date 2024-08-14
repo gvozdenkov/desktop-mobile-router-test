@@ -1,4 +1,4 @@
-import { createBrowserRouter, Link, redirect } from 'react-router-dom';
+import { createHashRouter, Link, redirect } from 'react-router-dom';
 
 import {
   ProfileDetailsLayout,
@@ -47,7 +47,7 @@ import { adminProfileConfirmatinMenuForAdmins } from '#constants/admin-confirmat
 import { chatMenu } from '#constants/chat-menu.js';
 import { adminChatProfileButtons } from '#constants/admin-chat-profile-buttons.js';
 
-export const router = createBrowserRouter([
+export const router = createHashRouter([
   {
     path: '/',
     element: <RootLayout />,
