@@ -45,6 +45,7 @@ import { recipientProfileButtons } from '#constants/recipient-profile-buttons.js
 import { adminProfileApplicationsSideMenu } from '#constants/admin-applications-side-menu.js';
 import { adminProfileConfirmatinMenuForAdmins } from '#constants/admin-confirmation-menu-for-admins.js';
 import { chatMenu } from '#constants/chat-menu.js';
+import { adminChatProfileButtons } from '#constants/admin-chat-profile-buttons.js';
 
 export const router = createBrowserRouter([
   {
@@ -80,7 +81,7 @@ export const router = createBrowserRouter([
             sideElements={
               <div>
                 <UserInfo />
-                <ProfileButtons buttons={adminProfileButtons} disabled={false} />
+                <ProfileButtons buttons={adminChatProfileButtons} disabled={false} />
               </div>
             }
           />
