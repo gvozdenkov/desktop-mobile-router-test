@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { Link, Outlet } from 'react-router-dom';
+import { NavLink, Outlet } from 'react-router-dom';
 
 import { adminPermissions, isRoot } from '#mocks.js';
 import { filterRootAdminConfig } from '#shared/utils';
@@ -16,7 +16,7 @@ export const ProfileDetailsLayout = ({ header, menu, sideMenu, controls }) => {
           <ul className="preview-border" style={{ display: 'flex', gap: '20px' }}>
             {adminMenu.map((button, i) => (
               <li key={i}>
-                <Link to={`${button.link}`}>{button.text}</Link>
+                <NavLink to={`${button.link}`}>{button.text}</NavLink>
               </li>
             ))}
           </ul>
@@ -25,7 +25,7 @@ export const ProfileDetailsLayout = ({ header, menu, sideMenu, controls }) => {
           <ul className="preview-border" style={{ display: 'flex', gap: '20px' }}>
             {sideMenu.map((button, i) => (
               <li key={i}>
-                <Link to={`${button.link}`}>{button.text}</Link>
+                <NavLink to={`${button.link}`}>{button.text}</NavLink>
               </li>
             ))}
           </ul>

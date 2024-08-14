@@ -79,3 +79,8 @@ ul a {
 .preview-border {
   border: 1px solid gray;
 }
+
+.active {
+  background-color: rgb(167, 230, 209);
+  text-decoration: underline;
+}
