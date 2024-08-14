@@ -44,6 +44,7 @@ import { volunteerProfileButtons } from '#constants/volunteer-profile-buttons.js
 import { recipientProfileButtons } from '#constants/recipient-profile-buttons.js';
 import { adminProfileApplicationsSideMenu } from '#constants/admin-applications-side-menu.js';
 import { adminProfileConfirmatinMenuForAdmins } from '#constants/admin-confirmation-menu-for-admins.js';
+import { chatMenu } from '#constants/chat-menu.js';
 
 export const router = createBrowserRouter([
   {
@@ -68,6 +69,56 @@ export const router = createBrowserRouter([
           {
             index: true,
             element: <p>Public Map</p>,
+          },
+        ],
+      },
+      {
+        path: 'chat',
+        element: (
+          <ProfileLayoutPrivate
+            allowed={['admin']}
+            sideElements={
+              <div>
+                <UserInfo />
+                <ProfileButtons buttons={adminProfileButtons} disabled={false} />
+              </div>
+            }
+          />
+        ),
+        children: [
+          {
+            index: true,
+            loader: () => redirect('waiting'),
+          },
+          {
+            path: 'waiting',
+            element: <ProfileDetailsLayout header={<SmartHeader title="Чат" />} menu={chatMenu} />,
+            children: [
+              {
+                index: true,
+                element: <p>waiting chats</p>,
+              },
+            ],
+          },
+          {
+            path: 'in-progress',
+            element: <ProfileDetailsLayout header={<SmartHeader title="Чат" />} menu={chatMenu} />,
+            children: [
+              {
+                index: true,
+                element: <p>in progress chats</p>,
+              },
+            ],
+          },
+          {
+            path: 'conflict',
+            element: <ProfileDetailsLayout header={<SmartHeader title="Чат" />} menu={chatMenu} />,
+            children: [
+              {
+                index: true,
+                element: <p>conflict chats</p>,
+              },
+            ],
           },
         ],
       },
