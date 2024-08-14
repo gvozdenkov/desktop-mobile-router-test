@@ -4,5 +4,5 @@ import { ConfirmCard, CardList } from '#widgets';
 export const ConfirmVolunteerPage = () => {
   const volunteers = mockVolunteers;
 
-  return <CardList Card={ConfirmCard} data={volunteers} />;
+  return <CardList Card={ConfirmCard} data={volunteers} noLink />;
 };
